@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane fx:id="gamePane"
+            prefHeight="700.0"
+            prefWidth="750.0"
+            stylesheets="@styles.css"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.sudoku.controller.SudokuController">
+
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+
+    <!-- ENCABEZADO -->
+    <top>
+        <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
+
+            <!-- Título con icono  -->
+            <HBox alignment="CENTER" spacing="15" style="-fx-padding: 10;">
+                <ImageView fitHeight="45.0" fitWidth="45.0" preserveRatio="true">
+                    <image>
+                        <Image url="https://cdn-icons-png.flaticon.com/512/10560/10560813.png" />
+                    </image>
+                </ImageView>
+
+                <Label fx:id="gameTitle" text="Sudoku 404 🌿"
+                       style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #8B7355;">
+                    <font>
+                        <Font name="Georgia Bold" size="32.0" />
+                    </font>
+                </Label>
+            </HBox>
+
+            <!-- Separador decorativo -->
+            <Separator prefWidth="200.0"
+                       style="-fx-background-color: #E6D7B8;" />
+
+            <BorderPane.margin>
+                <Insets bottom="10.0" />
+            </BorderPane.margin>
+        </VBox>
+    </top>
+
+    <!-- TABLERO CENTRAL -->
+    <center>
+        <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+
+            <!-- Grid del Sudoku -->
+            <GridPane fx:id="sudokuGrid"
+                      alignment="CENTER"
+                      hgap="0.0"
+                      vgap="0.0"
+                      style="-fx-background-color: #8B7355;
+                             -fx-padding: 5;
+                             -fx-background-radius: 10;
+                             -fx-effect: dropshadow(gaussian, rgba(139, 115, 85, 0.3), 15, 0, 0, 5);">
+            </GridPane>
+
+            <BorderPane.margin>
+                <Insets top="10.0" />
+            </BorderPane.margin>
+        </VBox>
+    </center>
+
+    <!-- PIE DE PÁGINA CON CONTROLES -->
+    <bottom>
+        <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+
+            <!-- Contenedor de botones -->
+            <HBox alignment="CENTER" spacing="20.0" styleClass="button-container">
+
+                <!-- Botón Verify -->
+                <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="checkButton"
+                            onAction="#handleCheckBoard"
+                            text="✓ Verify"
+                            styleClass="game-button"
+                            style="-fx-background-color: linear-gradient(to bottom, #9CAF88, #8A9D77);
+                                   -fx-text-fill: white;">
+                        <font>
+                            <Font name="Georgia Bold" size="14.0" />
+                        </font>
+                    </Button>
+                    <Label text="Check solution"
+                           style="-fx-font-size: 10px; -fx-text-fill: #8B7355;" />
+                </VBox>
+
+                <!-- Botón Restart -->
+                <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="restartButton"
+                            onAction="#handleRestartGame"
+                            text="↻ Restart"
+                            styleClass="game-button"
+                            style="-fx-background-color: linear-gradient(to bottom, #D4A762, #C29752);
+                                   -fx-text-fill: white;">
+                        <font>
+                            <Font name="Georgia Bold" size="14.0" />
+                        </font>
+                    </Button>
+                    <Label text="New board"
+                           style="-fx-font-size: 10px; -fx-text-fill: #8B7355;" />
+                </VBox>
+
+                <!-- Botón Hint -->
+                <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="helpButton"
+                            onAction="#handleHelpOption"
+                            text="💡 Hint"
+                            styleClass="game-button"
+                            style="-fx-background-color: linear-gradient(to bottom, #B8A98F, #A8997F);
+                                   -fx-text-fill: white;">
+                        <font>
+                            <Font name="Georgia Bold" size="14.0" />
+                        </font>
+                    </Button>
+                    <Label text="Request help"
+                           style="-fx-font-size: 10px; -fx-text-fill: #8B7355;" />
+                </VBox>
+
+            </HBox>
+
+            <!-- Mensaje de estado -->
+            <HBox alignment="CENTER"
+                  style="-fx-background-color: rgba(255, 249, 230, 0.9);
+                         -fx-background-radius: 12;
+                         -fx-padding: 15;">
+                <Label fx:id="messageLabel"
+                       text="Relax, think, and enjoy solving it"
+                       style="-fx-font-size: 14px;
+                              -fx-font-weight: 600;
+                              -fx-text-fill: #6D5C45;">
+                    <font>
+                        <Font name="Georgia" size="14.0" />
+                    </font>
+                </Label>
+            </HBox>
+
+            <BorderPane.margin>
+                <Insets top="15.0" />
+            </BorderPane.margin>
+        </VBox>
+    </bottom>
+
+</BorderPane>

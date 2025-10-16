@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="welcomePane"
+           prefHeight="600.0"
+           prefWidth="550.0"
+           stylesheets="@styles.css"
+           xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.sudoku.controller.SudokuWelcomeController"
+           style="-fx-background-color: linear-gradient(135deg, #FFE694 0%, #D4A762 100%);">
+
+    <!-- Contenedor principal con fondo blanco redondeado -->
+    <VBox fx:id="welcomeContainer"
+          alignment="CENTER"
+          spacing="30.0"
+          maxWidth="450.0"
+          maxHeight="500.0"
+          style="-fx-background-color: #FFFDF5;
+                 -fx-background-radius: 25;
+                 -fx-effect: dropshadow(gaussian, rgba(139, 115, 85, 0.2), 25, 0, 0, 10);
+                 -fx-padding: 50 40 50 40;">
+
+        <!-- Logo del Sudoku más grande -->
+        <VBox alignment="CENTER" spacing="15">
+            <ImageView fitHeight="100.0" fitWidth="100.0" preserveRatio="true">
+                <image>
+                    <Image url="https://cdn-icons-png.flaticon.com/512/10560/10560813.png" />
+                </image>
+            </ImageView>
+        </VBox>
+
+        <!-- Título principal -->
+        <VBox alignment="CENTER" spacing="12">
+            <Label text="Welcome to"
+                   style="-fx-font-size: 18px;
+                          -fx-text-fill: #8B7355;
+                          -fx-font-weight: 600;">
+                <font>
+                    <Font name="Georgia" size="18.0" />
+                </font>
+            </Label>
+
+            <Label text="SUDOKU 404 🌿"
+                   style="-fx-font-size: 42px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #8B7355;
+                          -fx-effect: dropshadow(gaussian, rgba(139, 115, 85, 0.15), 3, 0, 0, 2);">
+                <font>
+                    <Font name="Georgia Bold" size="42.0" />
+                </font>
+            </Label>
+
+        </VBox>
+
+        <!-- Sección de entrada de name -->
+        <VBox alignment="CENTER" spacing="15.0" maxWidth="350.0">
+            <Label text="👤 Enter your player name"
+                   style="-fx-font-size: 15px;
+                          -fx-font-weight: 600;
+                          -fx-text-fill: #6D5C45;">
+                <font>
+                    <Font name="Georgia Bold" size="15.0" />
+                </font>
+            </Label>
+
+            <TextField fx:id="nicknameTxt"
+                       promptText="Enter your name here..."
+                       maxWidth="320.0"
+                       onKeyPressed="#handleEnterKey"
+                       style="-fx-font-size: 16px;
+                              -fx-padding: 15 20;
+                              -fx-background-color: #FFF9E6;
+                              -fx-border-color: #E6D7B8;
+                              -fx-border-radius: 12;
+                              -fx-background-radius: 12;
+                              -fx-border-width: 2;
+                              -fx-effect: dropshadow(gaussian, rgba(139, 115, 85, 0.1), 5, 0, 0, 2);">
+                <font>
+                    <Font name="Georgia" size="16.0" />
+                </font>
+            </TextField>
+        </VBox>
+
+        <!-- Botón de jugar -->
+        <VBox alignment="CENTER" spacing="10">
+            <Button fx:id="playButton"
+                    onAction="#handlePlay"
+                    text="START"
+                    style="-fx-background-color: linear-gradient(to bottom, #A3AB56, #8B9A46);
+                           -fx-text-fill: white;
+                           -fx-font-size: 18px;
+                           -fx-font-weight: bold;
+                           -fx-padding: 18 50;
+                           -fx-background-radius: 30;
+                           -fx-cursor: hand;
+                           -fx-effect: dropshadow(gaussian, rgba(163, 171, 86, 0.4), 10, 0, 0, 5);">
+                <font>
+                    <Font name="Georgia Bold" size="18.0" />
+                </font>
+            </Button>
+        </VBox>
+
+    </VBox>
+
+</StackPane>
