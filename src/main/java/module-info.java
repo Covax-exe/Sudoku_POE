@@ -1,16 +1,16 @@
-module com.example.sudoku { // Use el nombre de su módulo si es diferente
+module com.example.sudoku { // Use your module's name if it is different.
     requires javafx.controls;
     requires javafx.fxml;
-    requires javafx.graphics; // Inclúyalo por si acaso
+    requires javafx.graphics; // Include it just in case
 
-    // EXPORTAR el paquete de la clase principal (el lanzador)
+    // EXPORT the main class package (the launcher)
     exports com.example.sudoku;
 
-    // ABRIR los paquetes de controladores para que el FXML Loader pueda instanciarlos
-    // El loader.getController() necesita esta línea:
+    // OPEN the controller packages so that the FXML Loader can instantiate them
+    // loader.getController() requires this line:
     opens com.example.sudoku.controller to javafx.fxml;
 
-    // Abrir el paquete de vistas si las clases Stage están allí
+    // Open the view package if the Stage classes are there
     opens com.example.sudoku.view to javafx.fxml;
 
 }
