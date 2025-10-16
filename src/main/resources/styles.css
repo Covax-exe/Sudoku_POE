@@ -1,8 +1,5 @@
-/* ============================================
-   SUDOKU 6x6 - ESTILOS PRINCIPALES
-   ============================================ */
+/* --- COLOR PALETTE --- */
 
-/* --- PALETA DE COLORES --- */
 .root {
     -fx-primary: #8B7355;
     -fx-secondary: #A3AB56;
@@ -13,15 +10,15 @@
     -fx-dark: #6D5C45;
 }
 
-/* --- ESTILOS GENERALES --- */
+/* --- GENERAL STYLES --- */
 .root {
     -fx-font-family: "Georgia", "Times New Roman", serif;
     -fx-background-color: linear-gradient(to bottom right, #FFE694 0%, #D4A762 100%);
 }
 
-/* --- VENTANA DE BIENVENIDA MEJORADA --- */
+/* --- WELCOME WINDOW --- */
 #welcomePane {
-    -fx-background-color: linear-gradient(135deg, #FFE694 0%, #D4A762 100%);
+    -fx-background-color: linear-gradient(to bottom right, #ffe694 0%, #d4a762 100%);
 }
 
 #welcomeContainer {
@@ -31,7 +28,7 @@
     -fx-effect: dropshadow(gaussian, rgba(139, 115, 85, 0.2), 25, 0, 0, 10);
 }
 
-/* TextField mejorado */
+/* TextField */
 #nicknameTxt {
     -fx-font-size: 16px;
     -fx-font-family: "Georgia", serif;
@@ -56,7 +53,7 @@
     -fx-background-color: #FFFDF5;
 }
 
-/* Botón de jugar mejorado */
+/* Play button */
 #playButton {
     -fx-background-color: linear-gradient(to bottom, #A3AB56, #8B9A46);
     -fx-text-fill: white;
@@ -83,7 +80,7 @@
     -fx-scale-x: 1.05;
 }
 
-/* --- VENTANA DEL JUEGO --- */
+/* --- GAME WINDOW --- */
 #gamePane {
     -fx-background-color: linear-gradient(to bottom, #FFF9E6 0%, #E6D7B8 100%);
 }
@@ -96,7 +93,7 @@
     -fx-effect: dropshadow(gaussian, rgba(139, 115, 85, 0.2), 3, 0, 0, 2);
 }
 
-/* --- GRID DEL SUDOKU --- */
+/* --- SUDOKU GRID --- */
 #sudokuGrid {
     -fx-background-color: #FFFDF5;
     -fx-padding: 20;
@@ -104,7 +101,7 @@
     -fx-effect: dropshadow(gaussian, rgba(139, 115, 85, 0.2), 15, 0, 0, 5);
 }
 
-/* Celdas del Sudoku */
+/* Sudoku cells */
 .sudoku-cell {
     -fx-font-size: 22px;
     -fx-font-family: "Georgia", serif;
@@ -149,7 +146,7 @@
     -fx-text-fill: #7D8546;
 }
 
-/* --- BOTONES DEL JUEGO --- */
+/* --- GAME BUTTONS --- */
 .game-button {
     -fx-font-size: 14px;
     -fx-font-family: "Georgia", serif;
@@ -197,7 +194,7 @@
     -fx-background-color: linear-gradient(to bottom, #C8B99F, #B8A98F);
 }
 
-/* --- MENSAJE DE ESTADO --- */
+/* --- STATUS MESSAGE --- */
 #messageLabel {
     -fx-font-size: 15px;
     -fx-font-family: "Georgia", serif;
@@ -208,7 +205,7 @@
     -fx-background-radius: 10;
 }
 
-/* --- ANIMACIONES --- */
+/* --- ANIMATIONS --- */
 @keyframes fadeIn {
     from { -fx-opacity: 0; }
     to { -fx-opacity: 1; }
@@ -219,13 +216,12 @@
     to { -fx-translate-y: 0; -fx-opacity: 1; }
 }
 
-/* --- ICONOS Y DECORACIONES --- */
+/* --- ICONS --- */
 .icon {
     -fx-font-family: "FontAwesome";
     -fx-font-size: 18px;
 }
 
-/* --- RESPONSIVE --- */
 .button-container {
     -fx-spacing: 15;
     -fx-padding: 20 0 0 0;

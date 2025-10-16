@@ -6,11 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.Objects;
+
+import javafx.scene.image.Image;
 
 
 /**
- * Custom Stage class for the Sudoku Game window.
- * Implements the Singleton pattern (advanced MVC).
+ * Custom Stage class for the Sudoku Game window
+ * Implements the Singleton pattern
  */
 public class SudokuGameStage extends Stage {
 
@@ -20,7 +23,7 @@ public class SudokuGameStage extends Stage {
     private static final String APP_TITLE = "Sudoku 404 - Game";
 
     /**
-     * Constructor privado para prevenir la creación de instancias externas.
+     * Private constructor to prevent the creation of external instances
      */
     private SudokuGameStage() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(FXML_PATH));
@@ -34,10 +37,18 @@ public class SudokuGameStage extends Stage {
         this.setResizable(false);
         this.centerOnScreen();
         controller.initializeBoard();
+
+        // set icon
+        try {
+            Image icon = new Image(getClass().getResourceAsStream("/images/icon.png"));
+            this.getIcons().add(icon);
+        } catch (Exception e) {
+            System.err.println("Warning: The icon could not be loaded from the path /images/icon.png. " + e.getMessage());
+        }
     }
 
     /**
-     * Método de acceso Singleton. Crea la instancia si no existe o la retorna.
+     * Singleton access method. Creates the instance if it does not exist
      */
     public static SudokuGameStage getInstance() throws IOException {
         if (instance == null) {
@@ -47,7 +58,7 @@ public class SudokuGameStage extends Stage {
     }
 
     /**
-     * Getter for the Controller (used for inter-controller communication).
+     * Getter for the Controller (used for inter-controller communication)
      * @return The SudokuController instance.
      */
     public SudokuController getController() {

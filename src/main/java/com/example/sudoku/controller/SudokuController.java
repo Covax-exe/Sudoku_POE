@@ -84,10 +84,10 @@ public class SudokuController implements I_InputHandler {
     private void applyGridStyling(TextField cellField, int row, int col) {
         StringBuilder style = new StringBuilder();
 
-        // Bordes base para todas las celdas
+        // base borders for all cells
         style.append("-fx-border-style: solid; ");
 
-        // Bordes LEFT
+        // left edges
         if (col == 0) {
             style.append("-fx-border-left-width: 0; ");
         } else if (col == 3) {
@@ -96,7 +96,7 @@ public class SudokuController implements I_InputHandler {
             style.append("-fx-border-left-width: 1; -fx-border-left-color: #BDC3C7; ");
         }
 
-        // Bordes RIGHT
+        // right edges
         if (col == 5) {
             style.append("-fx-border-right-width: 0; ");
         } else if (col == 2) {
@@ -105,7 +105,7 @@ public class SudokuController implements I_InputHandler {
             style.append("-fx-border-right-width: 1; -fx-border-right-color: #BDC3C7; ");
         }
 
-        // Bordes TOP
+        // top edges
         if (row == 0) {
             style.append("-fx-border-top-width: 0; ");
         } else if (row == 2 || row == 4) {
@@ -114,7 +114,7 @@ public class SudokuController implements I_InputHandler {
             style.append("-fx-border-top-width: 1; -fx-border-top-color: #BDC3C7; ");
         }
 
-        // Bordes BOTTOM
+        // bottom edges
         if (row == 5) {
             style.append("-fx-border-bottom-width: 0; ");
         } else if (row == 1 || row == 3) {
@@ -123,7 +123,7 @@ public class SudokuController implements I_InputHandler {
             style.append("-fx-border-bottom-width: 1; -fx-border-bottom-color: #BDC3C7; ");
         }
 
-        // Estilos de color según tipo de celda
+        // color styles according to cell type
         if (model.getCell(row, col).isFixed()) {
             style.append("-fx-background-color: #E8EAF6; -fx-font-weight: bold; -fx-text-fill: #3F51B5; ");
             cellField.getStyleClass().add("sudoku-cell-fixed");
@@ -213,10 +213,10 @@ public class SudokuController implements I_InputHandler {
 
         StringBuilder style = new StringBuilder();
 
-        // Bordes base
+        // base edges
         style.append("-fx-border-style: solid; ");
 
-        // Bordes LEFT
+        // left edges
         if (col == 0) {
             style.append("-fx-border-left-width: 0; ");
         } else if (col == 3) {
@@ -225,7 +225,7 @@ public class SudokuController implements I_InputHandler {
             style.append("-fx-border-left-width: 1; -fx-border-left-color: #BDC3C7; ");
         }
 
-        // Bordes RIGHT
+        // right edges
         if (col == 5) {
             style.append("-fx-border-right-width: 0; ");
         } else if (col == 2) {
@@ -234,7 +234,7 @@ public class SudokuController implements I_InputHandler {
             style.append("-fx-border-right-width: 1; -fx-border-right-color: #BDC3C7; ");
         }
 
-        // Bordes TOP
+        // top edges
         if (row == 0) {
             style.append("-fx-border-top-width: 0; ");
         } else if (row == 2 || row == 4) {
@@ -243,7 +243,7 @@ public class SudokuController implements I_InputHandler {
             style.append("-fx-border-top-width: 1; -fx-border-top-color: #BDC3C7; ");
         }
 
-        // Bordes BOTTOM
+        // bottom edges
         if (row == 5) {
             style.append("-fx-border-bottom-width: 0; ");
         } else if (row == 1 || row == 3) {
@@ -252,7 +252,7 @@ public class SudokuController implements I_InputHandler {
             style.append("-fx-border-bottom-width: 1; -fx-border-bottom-color: #BDC3C7; ");
         }
 
-        // Aplicar estilos según el estado
+        // aply styles according to status
         if (isError) {
             style.append("-fx-background-color: #FFCDD2; -fx-text-fill: #C62828; ");
             cellField.getStyleClass().add("sudoku-cell-error");
@@ -324,13 +324,13 @@ public class SudokuController implements I_InputHandler {
 
         selectedCell = null;
         updateView();
-        messageLabel.setText("🔄 Game restarted! New challenge loaded. Good luck!");
+        messageLabel.setText("🔄 Game restarted! New challenge loaded.");
     }
 
     private void handleVictory() {
         showStyledAlert(Alert.AlertType.CONFIRMATION, "🏆 ¡VICTORY!",
                 "Congratulations! You have successfully completed the Sudoku puzzle.");
-        messageLabel.setText("🏆 YOU WON! Press ‘Restart’ for a new challenge.");
+        messageLabel.setText("🏆 YOU WON! Click “Restart” to play again.");
     }
 
     private void showAlert(Alert.AlertType type, String title, String content) {

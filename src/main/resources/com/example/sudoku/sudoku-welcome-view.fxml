@@ -15,13 +15,12 @@
 <StackPane fx:id="welcomePane"
            prefHeight="600.0"
            prefWidth="550.0"
-           stylesheets="@styles.css"
+           stylesheets="@/styles.css"
            xmlns="http://javafx.com/javafx/21"
            xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="com.example.sudoku.controller.SudokuWelcomeController"
-           style="-fx-background-color: linear-gradient(135deg, #FFE694 0%, #D4A762 100%);">
+           fx:controller="com.example.sudoku.controller.SudokuWelcomeController">
 
-    <!-- Contenedor principal con fondo blanco redondeado -->
+    <!-- Main container -->
     <VBox fx:id="welcomeContainer"
           alignment="CENTER"
           spacing="30.0"
@@ -32,7 +31,7 @@
                  -fx-effect: dropshadow(gaussian, rgba(139, 115, 85, 0.2), 25, 0, 0, 10);
                  -fx-padding: 50 40 50 40;">
 
-        <!-- Logo del Sudoku más grande -->
+        <!-- Sudoku icon -->
         <VBox alignment="CENTER" spacing="15">
             <ImageView fitHeight="100.0" fitWidth="100.0" preserveRatio="true">
                 <image>
@@ -41,7 +40,7 @@
             </ImageView>
         </VBox>
 
-        <!-- Título principal -->
+        <!-- Title -->
         <VBox alignment="CENTER" spacing="12">
             <Label text="Welcome to"
                    style="-fx-font-size: 18px;
@@ -64,7 +63,7 @@
 
         </VBox>
 
-        <!-- Sección de entrada de name -->
+        <!-- Name input section -->
         <VBox alignment="CENTER" spacing="15.0" maxWidth="350.0">
             <Label text="👤 Enter your player name"
                    style="-fx-font-size: 15px;
@@ -93,7 +92,7 @@
             </TextField>
         </VBox>
 
-        <!-- Botón de jugar -->
+        <!-- Play button -->
         <VBox alignment="CENTER" spacing="10">
             <Button fx:id="playButton"
                     onAction="#handlePlay"

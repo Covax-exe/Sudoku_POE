@@ -34,9 +34,9 @@ public class SudokuModel {
      * This guarantees every puzzle is solvable.
      */
     public void resetBoard() {
-        // --- LÓGICA DE GENERACIÓN ---
+        // GENERATION LOGIC
 
-        // 1. Empezamos con una plantilla de un Sudoku 6x6 ya resuelto y válido.
+        // start with a template of a solved and valid Sudoku board.
         int[][] solvedTemplate = {
                 {1, 2, 3, 4, 5, 6},
                 {4, 5, 6, 1, 2, 3},
@@ -46,8 +46,8 @@ public class SudokuModel {
                 {6, 4, 5, 3, 1, 2}
         };
 
-        // 2. Creamos una lista de números (1-6) y la barajamos para la aleatoriedad.
-        // Esto nos servirá para mapear los números. Ej: todos los 1 se volverán 5, los 2 se volverán 3, etc.
+        // create a list of numbers (1-6) and shuffle it for randomness
+        // This will help us map the numbers -> all 1s will become 5s, 2s will become 3s, etc
         List<Integer> numbers = IntStream.rangeClosed(1, SIZE).boxed().collect(Collectors.toList());
         Collections.shuffle(numbers);
         Map<Integer, Integer> numberMap = new HashMap<>();
@@ -55,7 +55,7 @@ public class SudokuModel {
             numberMap.put(i + 1, numbers.get(i));
         }
 
-        // 3. Creamos un nuevo tablero resuelto y aleatorio aplicando el mapeo de números.
+        // create a new solved and randomized board by applying number mapping.
         int[][] randomizedSolvedBoard = new int[SIZE][SIZE];
         for (int r = 0; r < SIZE; r++) {
             for (int c = 0; c < SIZE; c++) {
@@ -63,7 +63,7 @@ public class SudokuModel {
             }
         }
 
-        // 4. Creamos el tablero del puzle final, "quitando" las piezas que no queremos.
+        // create the final puzzle board by erasing the pieces we don't want
         int[][] initialBoard = new int[SIZE][SIZE];
         List<int[]> fixedPositions = Arrays.asList(
                 new int[]{0, 0}, new int[]{0, 3},
@@ -77,7 +77,7 @@ public class SudokuModel {
             initialBoard[row][col] = randomizedSolvedBoard[row][col];
         }
 
-        // --- FIN DE LA LÓGICA DE GENERACIÓN ---
+        // END OF GENERATION LOGIC
 
         board.clear();
         for (int row = 0; row < SIZE; row++) {

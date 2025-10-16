@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Main application class (Lanzador).
+ * Main application class
  * This class serves as the entry point for the JavaFX application.
  */
 public class Main extends Application {
@@ -23,7 +23,7 @@ public class Main extends Application {
     }
 
     /**
-     * Método main estándar de Java para lanzar la aplicación.
+     * Java's standard main method for launching the application
      * @param args Command line arguments.
      */
     public static void main(String[] args) {

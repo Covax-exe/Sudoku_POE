@@ -27,9 +27,8 @@ public class SudokuWelcomeController {
     @FXML
     void handleEnterKey(KeyEvent event) throws IOException {
         if (event.getCode() == KeyCode.ENTER) {
-            // Llama a la lógica de inicio del juego
             handlePlay(new ActionEvent());
-            event.consume(); // Consume el evento para que no se propague
+            event.consume();
         }
     }
 
@@ -41,10 +40,10 @@ public class SudokuWelcomeController {
     @FXML
     void handlePlay(ActionEvent event) throws IOException {
         try {
-            // 1. Oculta la ventana de bienvenida (Singleton)
+            // hide the welcome window (Singleton)
             SudokuWelcomeStage.getInstance().hide();
 
-            // 2. Muestra la ventana del juego (Singleton). Si no existe, la crea.
+            // displays the game window (Singleton). If it does not exist, it creates it
             SudokuGameStage gameStage = SudokuGameStage.getInstance();
             gameStage.show();
 

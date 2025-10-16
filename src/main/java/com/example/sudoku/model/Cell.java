@@ -25,14 +25,14 @@ public class Cell {
         this.isError = false;
     }
 
-    // --- Getters ---
+    // Getters
     public int getValue() { return value; }
     public int getRow() { return row; }
     public int getCol() { return col; }
     public boolean isFixed() { return isFixed; }
     public boolean isError() { return isError; }
 
-    // --- Setters ---
+    // Setters
     public void setValue(int value) {
         if (!isFixed) {
             this.value = value;
